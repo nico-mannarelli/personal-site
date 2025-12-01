@@ -1,0 +1,46 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+import { site } from '../config/site';
+---
+
+<BlogLayout title={`Extra - ${site.name}`}>
+  <div class="page-wrapper">
+    <!-- Site Header -->
+    <header class="site-header">
+      <h1 class="site-title">
+        <a href="/">{site.name}</a>
+      </h1>
+      <nav class="site-navigation">
+        <ul>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/resume">Resume</a></li>
+          <li><a href="/extra">Extra</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content Card -->
+    <main class="main entry-content">
+      <h2>Extra</h2>
+
+      <!-- Interests Section -->
+      <p>
+        {site.interests}
+      </p>
+
+      <!-- Additional interests can be added here -->
+      <p>
+        I'm particularly interested in:
+      </p>
+      <ul>
+        <li>Quantum machine learning and its applications in intelligence analysis</li>
+        <li>Low-level systems programming and compiler design</li>
+        <li>Defense technology and secure systems architecture</li>
+        <li>Performance optimization and efficient algorithms</li>
+        <li>Exploring the intersection of quantum computing and classical ML</li>
+      </ul>
+    </main>
+  </div>
+</BlogLayout>
+
+

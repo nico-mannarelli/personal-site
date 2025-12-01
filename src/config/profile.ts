@@ -1,37 +1,52 @@
 export const profile = {
   name: "Nico Mannarelli",
-  title: "Computer Science Student",
-  bio: "I am a tech-savvy individual with a Bachelor's degree in Software Development, seeking employment as a software engineer. I am passionate about consistently advancing my knowledge and skills. I have attended multiple seminars and boot camps on coding and game development.",
-  email: "nico.mannarelli@example.com",
+  title: "Computer Science & Mathematics Student",
+  phone: "(443) 845 - 8181",
+  email: "nicomannarelli@gmail.com",
   location: "College Park, MD",
-  profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+  profileImage: "/profile.jpg",
   social: {
-    github: "https://github.com/nico",
-    linkedin: "https://www.linkedin.com/in/nico-mannarelli",
+    github: "https://github.com/nico-mannarelli",
+    linkedin: "https://linkedin.com/in/nico-mannarelli",
   },
   skills: {
-    languages: ["C/C++", "Rust", "Python", "Go", "TypeScript"],
-    backend: ["Node.js", "PostgreSQL", "Redis", "GraphQL"],
-    cloud: ["AWS", "Kubernetes", "Docker", "Terraform"],
+    languages: ["Python", "C", "C++", "Java", "MATLAB", "SQL", "Rust"],
+    frameworks: ["Pandas", "PyTorch", "NumPy", "Qiskit", "PennyLane", "Ultralytics"],
+    tools: ["Git", "Github", "VSCode", "Jupyter", "AWS", "Azure"],
   },
   experience: [
     {
-      title: "Software Engineer Intern",
-      company: "Tech Company",
-      dateRange: "2023 - Present",
-      description: "Developed scalable microservices architecture, improving system performance by 40%.",
+      title: "Research Assistant",
+      company: "Applied Research Lab for Intelligence and Security (ARLIS)",
+      dateRange: "June 2025 - August 2025",
+      location: "College Park, MD",
+      bullets: [
+        "Conducted applied research in quantum machine learning and hybrid classical–quantum architectures for intelligence analysis and decision-support systems",
+        "Achieved 97.3% accuracy on the MNIST dataset using a custom-parameterized quantum circuit optimized via PennyLane and PyTorch with a gradient-free evolutionary optimizer",
+        "Deployed quantum simulation experiments on ARLIS's classified HPC environment, ensuring compliance with DoD and NIST security standards under Secret Clearance"
+      ],
     },
     {
       title: "Research Assistant",
-      company: "University Lab",
-      dateRange: "2022 - 2023",
-      description: "Architected cloud-native applications for quantum computing research, mentored junior developers.",
+      company: "FIRE Quantum Machine Learning Lab - University of Maryland",
+      dateRange: "June 2024 - August 2024",
+      location: "College Park, MD",
+      bullets: [
+        "Conducted research on Variational Quantum Circuits (VQC) applied to Reinforcement Learning (RL)",
+        "Focused on performance and trainability of quantum algorithms with data re-uploading",
+        "Developed quantum-classical hybrid approaches to improve decision-making in classical control problems"
+      ],
     },
     {
-      title: "Student Developer",
-      company: "Open Source Project",
-      dateRange: "2021 - 2022",
-      description: "Built scalable web applications using React and Node.js for defense technology applications.",
+      title: "Research Assistant",
+      company: "FIRE Rapid Diagnostics - University of Maryland",
+      dateRange: "August 2023 - December 2024",
+      location: "College Park, MD",
+      bullets: [
+        "Developed microfluidic and paperfluidic devices for point-of-care diagnostics",
+        "Gained experience with Matlab, CAD, 3D printing, cutter-plotting, and PDMS molding for device fabrication",
+        "Focused on rapid, on-site chemical and bio-analysis for healthcare, environmental monitoring, and disease control"
+      ],
     },
   ],
 };
