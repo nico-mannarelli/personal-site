@@ -1,0 +1,53 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+import { site } from '../config/site';
+---
+
+<BlogLayout title={`${site.name} - Portfolio`}>
+  <div class="page-wrapper">
+    <!-- Site Header -->
+    <header class="site-header">
+      <h1 class="site-title">
+        <a href="/">{site.name}</a>
+      </h1>
+      <nav class="site-navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#Portfolio">Portfolio</a></li>
+          <li><a href="/resume">Resume</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content Card -->
+    <main class="main entry-content">
+      <!-- Main Heading -->
+      <h2>What I've Built</h2>
+
+      <!-- Projects List -->
+      {site.blogPosts.map((post) => (
+        <div class="mb-8">
+          <h3 class="mb-1">{post.title}</h3>
+          <p class="text-sm text-gray-600 mb-2">{post.date}</p>
+          {(post as any).description && (
+            <p class="mb-3">{(post as any).description}</p>
+          )}
+          {(post.github || post.demo) && (
+            <div class="mb-2">
+              <p class="text-sm font-semibold mb-1">Links:</p>
+              <div>
+                {post.github && (
+                  <a href={post.github} target="_blank" rel="noopener noreferrer" class="underline mr-4">GitHub</a>
+                )}
+                {post.demo && (
+                  <a href={post.demo} target="_blank" rel="noopener noreferrer" class="underline">Deployed Site</a>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      ))}
+    </main>
+  </div>
+</BlogLayout>
+

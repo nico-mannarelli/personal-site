@@ -1,0 +1,305 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Personal portfolio and blog" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    display: block
+}
+
+body {
+    line-height: 1;
+    -webkit-text-size-adjust: none
+}
+
+blockquote,q {
+    quotes: none
+}
+
+blockquote:before,blockquote:after {
+    content: "";
+    content: none
+}
+
+q:before,q:after {
+    content: "";
+    content: none
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+:focus {
+    outline: 0
+}
+
+.after-clear-fix:after,.page-navigation:after,.entry-navigation:after,.entry-content dl:after,.comment-content dl:after,.entry-summary dl:after,.entry-content blockquote:after,.comment-content blockquote:after,.entry-summary blockquote:after,.site-header:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    color: #000;
+    font-family: Arial,sans-serif;
+    font-size: 16px;
+    background: #1b2b36;
+    word-wrap: break-word
+}
+
+@media only screen and (max-width: 477px) {
+    body {
+        font-size:18px
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    body {
+        font-size:16px
+    }
+}
+
+.page-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.site-header,
+.main {
+    width: 728px;
+    max-width: 100%;
+}
+
+.main {
+    background: #fff;
+    margin: 10px auto;
+    padding: 30px;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+@media only screen and (max-width: 727px) {
+    .main {
+        margin-top:0;
+        margin-bottom: 0;
+        padding: 25px
+    }
+}
+
+@media only screen and (max-width: 477px) {
+    .main {
+        padding:19px 15px
+    }
+}
+
+.site-header {
+    position: relative;
+    max-width: 728px;
+    padding: 30px 30px 18px;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 727px) {
+    .site-header {
+        padding:25px 25px 21px;
+        margin: 0 auto
+    }
+}
+
+@media only screen and (max-width: 477px) {
+    .site-header {
+        margin:0 auto;
+        padding: 16px 15px
+    }
+}
+
+.site-title {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 2.25em;
+    font-family: Georgia,serif;
+    font-weight: 400;
+    letter-spacing: -1px
+}
+
+.site-title a {
+    color: #fff
+}
+
+.site-title a:hover {
+    color: #ddd
+}
+
+@media only screen and (max-width: 477px) {
+    .site-title {
+        font-size:2.22em
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .site-title {
+        font-size:2.25em
+    }
+}
+
+.site-navigation {
+    display: inline-block;
+    float: right;
+    line-height: 2.5714285714;
+    vertical-align: middle
+}
+
+@media only screen and (max-width: 477px) {
+    .site-navigation {
+        font-size:.875em
+    }
+}
+
+.site-navigation ul {
+    list-style-type: none
+}
+
+@media only screen and (max-width: 477px) {
+    .site-navigation ul {
+        margin-right:0
+    }
+}
+
+.site-navigation ul li {
+    display: inline-block
+}
+
+.site-navigation ul li a,.site-navigation ul li .search-bar {
+    color: #fff;
+    display: inline-block;
+    margin-left: 1.5em
+}
+
+@media only screen and (max-width: 477px) {
+    .site-navigation ul li a,.site-navigation ul li .search-bar {
+        margin-left:1.15em
+    }
+}
+
+.site-navigation ul li a:hover {
+    color: #ddd
+}
+
+.entry-content,.comment-content,.entry-summary {
+    font: 400 1em/1.5 Arial,sans-serif;
+    line-height: 1.5;
+    margin: 0 0 .75em 0
+}
+
+.entry-content p,.comment-content p,.entry-summary p,.entry-content address,.comment-content address,.entry-summary address {
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 0 0 .75em 0
+}
+
+.entry-content h1,.comment-content h1,.entry-summary h1,.entry-content h2,.comment-content h2,.entry-summary h2,.entry-content h3,.comment-content h3,.entry-summary h3,.entry-content h4,.comment-content h4,.entry-summary h4,.entry-content h5,.comment-content h5,.entry-summary h5,.entry-content h6,.comment-content h6,.entry-summary h6 {
+    margin: 1.3em 0 .5em 0
+}
+
+.entry-content h1,.comment-content h1,.entry-summary h1 {
+    font: 400 1.48em/1.6 Arial,sans-serif
+}
+
+.entry-content h2,.comment-content h2,.entry-summary h2 {
+    font: 400 1.29em/1.6 Arial,sans-serif
+}
+
+.entry-content ul,.comment-content ul,.entry-summary ul {
+    list-style-type: disc
+}
+
+.entry-content ol,.comment-content ol,.entry-summary ol,.entry-content ul,.comment-content ul,.entry-summary ul {
+    margin-bottom: .75em;
+    line-height: 150%
+}
+
+.entry-content li,.comment-content li,.entry-summary li {
+    margin-left: 1.57em
+}
+
+.entry-content a,.comment-content a,.entry-summary a {
+    color: #000;
+    text-decoration: underline
+}
+
+.entry-content a:focus,.comment-content a:focus,.entry-summary a:focus,.entry-content a:hover,.comment-content a:hover,.entry-summary a:hover {
+    color: #666
+}
+
+.entry-feature {
+    float: right;
+    padding-left: 17px;
+    padding-bottom: 7px
+}
+
+.entry-feature img {
+    border: 2px solid #000;
+    display: block;
+    height: auto;
+    width: 190px
+}
+
+@media only screen and (max-width: 727px) {
+    .entry-feature img {
+        width:155px
+    }
+}
+
+@media only screen and (max-width: 477px) {
+    .entry-feature img {
+        width:125px
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .entry-feature img {
+        width:99px
+    }
+}
+</style>

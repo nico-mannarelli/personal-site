@@ -1,0 +1,66 @@
+---
+import ProfileLayout from '../layouts/ProfileLayout.astro';
+import { profile } from '../config/profile';
+---
+
+<ProfileLayout title="Profile">
+  <div class="min-h-screen flex flex-col md:flex-row">
+    <!-- Left Section: White Background with Profile Info -->
+    <div class="w-full md:w-1/2 bg-white flex flex-col items-center justify-center p-8 md:p-12">
+      <!-- Profile Image (Square) -->
+      <div class="mb-8">
+        <img 
+          src={profile.profileImage} 
+          alt={profile.name} 
+          class="w-64 h-64 object-cover"
+        />
+      </div>
+
+      <!-- Name -->
+      <h1 class="text-4xl md:text-5xl font-bold mb-2 text-gray-900">{profile.name}</h1>
+
+      <!-- Pronouns -->
+      <p class="text-base text-gray-600 mb-4">{profile.pronouns}</p>
+
+      <!-- Job Title -->
+      <p class="text-xl text-gray-700 mb-12">{profile.title}</p>
+
+      <!-- Email Me Button -->
+      <a 
+        href={`mailto:${profile.email}`}
+        class="bg-gray-800 text-white px-8 py-3 rounded-md font-medium hover:bg-gray-900 transition-colors"
+      >
+        Email me
+      </a>
+    </div>
+
+    <!-- Right Section: Gray Background with About Me -->
+    <div class="w-full md:w-1/2 bg-gray-300 flex flex-col justify-center p-8 md:p-12">
+      <!-- About Me Heading -->
+      <h2 class="text-4xl md:text-5xl font-bold mb-8 text-gray-900">About Me</h2>
+
+      <!-- About Me Text -->
+      <div class="max-w-lg mb-12">
+        <p class="text-lg text-gray-700 leading-relaxed">
+          {profile.bio}
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a 
+          href="/resume"
+          class="bg-gray-800 text-white px-8 py-3 rounded-md font-medium hover:bg-gray-900 transition-colors text-center"
+        >
+          Resume
+        </a>
+        <a 
+          href="/portfolio"
+          class="bg-gray-800 text-white px-8 py-3 rounded-md font-medium hover:bg-gray-900 transition-colors text-center"
+        >
+          Portfolio
+        </a>
+      </div>
+    </div>
+  </div>
+</ProfileLayout>

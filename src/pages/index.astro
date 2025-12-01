@@ -1,0 +1,71 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+import { site } from '../config/site';
+---
+
+<BlogLayout title={site.name}>
+  <div class="page-wrapper">
+    <!-- Site Header -->
+    <header class="site-header">
+      <h1 class="site-title">
+        <a href="/">{site.name}</a>
+      </h1>
+      <nav class="site-navigation">
+        <ul>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/resume">Resume</a></li>
+          <li><a href="#Extra">Extra</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content Card -->
+    <main class="main entry-content">
+    <!-- Main Heading -->
+    <h2>{site.title}</h2>
+
+    <!-- Profile Photo and Intro -->
+    <div class="entry-feature">
+      <img 
+        src={site.profileImage} 
+        alt={site.name}
+      />
+    </div>
+    <p>
+      {site.intro}
+    </p>
+
+    <!-- Notable Mentions Section -->
+    <p>
+      Recent Experience:
+    </p>
+    <ul>
+      {site.notableMentions.map((mention) => (
+        <li>{mention}</li>
+      ))}
+    </ul>
+
+    <!-- Interests Section -->
+    <p>
+      {site.interests}
+    </p>
+
+    <!-- Blog Posts Section -->
+    <p>
+      What I've Built:
+    </p>
+    <ul>
+      {site.blogPosts.map((post) => (
+        <li>
+          <a href="/portfolio">{post.title}</a> – {post.date}
+        </li>
+      ))}
+    </ul>
+
+    <!-- Skills Section -->
+    <p>
+      {site.skills}
+    </p>
+    </main>
+  </div>
+</BlogLayout>
