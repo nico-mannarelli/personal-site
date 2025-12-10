@@ -9,6 +9,7 @@ export const site = {
     "Research Assistant at ARLIS – quantum machine learning for intelligence analysis",
     "Built a bird species detection app using YOLOv8",
     "Compiler development – implementing functional language features",
+    "Grover's search simulation in a search-and-rescue environment",
   ],
   
   interests: "When I'm not coding, I enjoy reading about quantum machine learning, exploring low-level system architectures, and contributing to defense technology research projects.",
